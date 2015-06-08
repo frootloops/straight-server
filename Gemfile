@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "straight", "0.2.3"
+gem "straight", path: "/Users/frootloops/code/gear/straight-engine"
 gem "satoshi-unit"
 gem "goliath"
 gem "faye-websocket"

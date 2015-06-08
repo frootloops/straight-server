@@ -25,7 +25,7 @@ Sequel.migration do
       index [:hashed_id]
       index [:id], :unique=>true
       index [:name], :unique=>true
-      index [:pubkey], :unique=>true
+      index [:pubkey]
     end
     
     create_table(:orders, :ignore_index_errors=>true) do

@@ -332,6 +332,12 @@ module StraightServer
     plugin :timestamps, create: :created_at, update: :updated_at
     plugin :serialization, :marshal, :exchange_rate_adapter_names
     plugin :after_initialize
+    plugin :validation_helpers
+
+    def validate
+      super
+      validates_unique :pubkey if self[:address_provider] == "Bip32"
+    end
 
     def self.find_by_hashed_id(s)
       self.where(hashed_id: s).first
